@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./build/static/css/main.941f81fc.css" />
+  <link rel="stylesheet" href="./main.941f81fc.css" />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -16,12 +16,13 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Static page 2</h1>
+  <a href="./static-page-1.html">Go back</a>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Praesent consequat tristique est sit amet dignissim. Integer volutpat purus felis. 
     Nulla arcu dui, consectetur sed diam ut, tincidunt finibus arcu. Aenean in accumsan quam. 
     Etiam id eleifend ipsum. Nam nulla nisl, porttitor id cursus sit amet, condimentum non nulla. 
     Vivamus porttitor id augue eget condimentum. Nunc pellentesque ligula ac diam tincidunt mollis.</p>
-    <div id="poll-widget"></div>
 
   <p>Nulla varius imperdiet quam, nec congue metus posuere sagittis. 
     Nulla aliquam lacinia fermentum. Morbi facilisis arcu lectus, nec pharetra felis malesuada at. 
@@ -29,14 +30,14 @@
     Suspendisse aliquam, tortor quis vestibulum maximus, ipsum dolor dignissim enim, vel bibendum ante tellus non massa. Curabitur gravida nec urna vel euismod. 
     Nunc at sapien accumsan, tristique justo sit amet, blandit nisl. Vestibulum efficitur orci quis lorem iaculis, vitae pulvinar tellus maximus. 
     Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  <div id="poll-widget"></div>
 
 <p>Pellentesque in est urna. Morbi augue justo, convallis non ex et, hendrerit molestie arcu. Integer aliquam lacus arcu, eu iaculis turpis gravida non. 
   Nulla nec elementum sapien. Sed varius nec turpis nec elementum. Ut ac pharetra ex. Phasellus blandit urna eu tempus maximus. 
   Duis sed congue dolor, sit amet mollis est. Mauris a viverra odio, quis pulvinar mauris. In non velit pretium, luctus nibh non, cursus purus. 
   Sed at commodo velit. Phasellus quam leo, cursus ac efficitur a, hendrerit ac felis. Sed justo massa, varius ac laoreet et, dignissim sed ipsum.</p>
 </body>
-<script src="./build/static/js/main.f7dac393.js"></script>
-<script src="./build/static/js/main.f7dac393.js"></script>
+<script src="./main.3f494cf0.js"></script>
 <script>
   const questions = [
     {
@@ -74,6 +75,6 @@
       ]
     }
   ]
-  window.PollWidget.mount(questions)
+  window.PollWidget.mount(questions, 'poll-widget')
 </script>
 </html>

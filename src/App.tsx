@@ -36,17 +36,22 @@ const App: React.FC<{ questions: Questions[] }> = ({ questions }) => {
   })
 
   return (
-    <div className="poll-container">
-      <Card className='form-wrapper'>
-        <form>
+    <div data-testid="test-app" className="poll-container">
+      <Card data-testid="card-test" className='form-wrapper'>
+        <form data-testid="form">
           {questions.map((item, index) => (
-            <Fade in={index + 1 === questionDisplayId} timeout={{ enter: 2000, exit: 1000 }}>
-              <div key={index} className={index + 1 === questionDisplayId ? '' : 'hidden'}>
+            <Fade
+              key={index}
+              data-testid={`question-fade-${index}`}
+              in={index + 1 === questionDisplayId}
+              timeout={{ enter: 2000, exit: 1000 }}
+            >
+              <div className={index + 1 === questionDisplayId ? '' : 'hidden'}>
                 <FormLabel>{item.question}: </FormLabel>
                 <RadioInput
-                  className='radio-wrapper'
                   data={item.answers}
                   name={`question-${index}`}
+                  dataTestId={`question-${index}`}
                   onChange={({ target }) => onChangeValue(`question${index}`, target.value, index)}
                 />
               </div>
@@ -54,7 +59,7 @@ const App: React.FC<{ questions: Questions[] }> = ({ questions }) => {
           ))}
         </form>
         {questionDisplayId > questions.length &&
-        (<Fade in={true} timeout={{ enter: 2000 }}>
+        (<Fade data-testid="feedback-fade" in={true} timeout={{ enter: 2000 }}>
           <Box className='greetings-wrapper' onClick={onSubmit}>
             <CheckCircleOutline color="success" sx={{ fontSize: '7rem' }} />
             <Typography>Thank you for your feedback!</Typography>
