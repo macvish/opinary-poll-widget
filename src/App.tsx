@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Card, Divider, Fade, FormLabel, Slide, Typography } from '@mui/material'
+import { Box, Card, Divider, Fade, FormLabel, Typography } from '@mui/material'
 import { CheckCircleOutline } from '@mui/icons-material'
 
 import './App.css';
