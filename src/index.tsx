@@ -9,10 +9,9 @@ export interface Questions {
   answers: Array<{ value: string | number, label: string }>
 }
 
-const element = document.getElementById('poll-widget')
-
 window.PollWidget = {
-  mount: (questions: Questions[]) => {
+  mount: (questions: Questions[], id: string) => {
+    const element = document.getElementById(id)
     ReactDOM.render(
       <React.StrictMode>
         <App questions={questions} />
@@ -20,7 +19,8 @@ window.PollWidget = {
       element
     )
   },
-  unmount: () => {
+  unmount: (id: string) => {
+    const element = document.getElementById(id)
     ReactDOM.unmountComponentAtNode(element!)
   }
 }
