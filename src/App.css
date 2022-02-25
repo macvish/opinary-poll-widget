@@ -7,6 +7,11 @@
 }
 
 .form-wrapper {
+  min-width: 18rem;
+  min-height: 14.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1.5rem;
 }
 
@@ -14,8 +19,16 @@
   display: none;
 }
 
-.absolute {
-  position: absolute;
+.greetings-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mb {
+  margin-bottom: 1rem;
 }
 
 .App-link {
