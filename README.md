@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Simple Poll Widget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple poll widget made with reactjs and embedded in a html test file.
 
-## Available Scripts
+## Technologies
+- ReactJs
+- Yarn
+- TypeScript
+- Material UI
+- React Testing Library
 
+## Node Version
+`v16.0.0`
+
+## React Version
+`v17.0.2`
+
+## Typescript Version
+`v4.4.2`
+## Final work
+
+In the project directory, you can find the folder `final-work` where the minified js/css file is located and both html files.
+
+Below is the how to configure the queations:
+
+```
+const questions = [
+    {
+      question: 'How do you feel today',
+      answers: [
+        {
+          value: 'Brilliant! I have so much energy',
+          label: 'Brilliant! I have so much energy'
+        },
+        {
+          value: 'Always can be worse',
+          label: 'Always can be worse'
+        },
+        {
+          value: 'Please, end my misery',
+          label: 'Please, end my misery'
+        }
+      ]
+    },
+    {
+      question: 'How do you like the Opinary test',
+      answers: [
+        {
+          value: 'It was great and so challenging',
+          label: 'It was great and so challenging'
+        },
+        {
+          value: 'Not bad, but you can improve',
+          label: 'Not bad, but you can improve'
+        },
+        {
+          value: 'It was a nightmare, never again',
+          label: 'It was a nightmare, never again'
+        }
+      ]
+    }
+  ]
+```
+
+## Setup Poll Widget
 In the project directory, you can run:
 
-### `yarn start`
+### Install Dependencies
+Clone/download project, when done, you'd have to install all the dependancies of the project by runing the following command on your cmd or terminal:
+`yarn`
+or
+`yarn install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Start Project
+`yarn start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Run Unit Test
+`yarn test`
 
-### `yarn test`
+### Build Project
+`yarn build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
+### Eject React
+`yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
