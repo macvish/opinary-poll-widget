@@ -1,0 +1,15 @@
+.radio-content-container {
+  display: flex;
+  flex-direction: column;
+}
+.radio-content-wrapper {
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: #c3c3c3c3;
+}
+.radio-label {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}

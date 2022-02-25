@@ -48,16 +48,21 @@ interface AppState {
 
 function App() {
   const [value, setValue] = React.useState<AppState>({});
+  const [questionDisplayId, setQuestionDisplayId] = useState(1);
 
   const onChangeValue = (name: string, value: string | number, id: number) => {
-    setValue(prevState => ({...prevState, [name]: value, id, question: questions[id].question }))
+    setValue(prevState => ({ ...prevState, [name]: value, id, question: questions[id].question }))
+
+    const timeout = setTimeout(() => setQuestionDisplayId(questionDisplayId + 1), 2000)
+
+    return () => clearTimeout(timeout)
   }
 
   return (
     <div>
       <form>
         {questions.map((item, index) => (
-          <div key={index}>
+          <div key={index} className={index + 1 === questionDisplayId ? '' : ''}>
             <p>{item.question}</p>
             <RadioInput
               className='radio-wrapper'
