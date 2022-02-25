@@ -4,12 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export interface Questions {
+  question: string
+  answers: Array<{ value: string | number, label: string }>
+}
+
+const element = document.getElementById('poll-widget')
+
+window.PollWidget = {
+  mount: (questions: Questions[]) => {
+    ReactDOM.render(
+      <React.StrictMode>
+        <App questions={questions} />
+      </React.StrictMode>,
+      element
+    )
+  },
+  unmount: () => {
+    ReactDOM.unmountComponentAtNode(element!)
+  }
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
