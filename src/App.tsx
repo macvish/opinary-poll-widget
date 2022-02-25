@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <p>How you feel today:</p>
+        <div className="radio-wrapper">
+          <div>
+            <input type="radio" name="feeling" value="Brilliant! I have so much energy" />
+            <span>Brilliant! I have so much energy</span>
+          </div>
+          <div>
+            <input type="radio" name="feeling" value="Always can be worse" />
+            <span>Always can be worse</span>
+          </div>
+          <div>
+            <input type="radio" name="feeling" value="I am in the middle of the road" />
+            <span>I am in the middle of the road</span>
+          </div>
+          <div>
+            <input type="radio" name="feeling" value="Please, end my misery" />
+            <span>Please, end my misery</span>
+          </div>
+        </div>
+      </form>
     </div>
   );
 }
