@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Card, FormLabel, Slide } from '@mui/material'
 
 import './App.css';
 import { RadioInput } from './base/components';
@@ -58,22 +59,36 @@ function App() {
     return () => clearTimeout(timeout)
   }
 
+  const onSubmit = () => {
+    localStorage.setItem('results', JSON.stringify(value))
+  }
+
+  useEffect(() => {
+    if (questionDisplayId > questions.length) {
+      onSubmit()
+    }
+  })
+
   return (
-    <div>
-      <form>
-        {questions.map((item, index) => (
-          <div key={index} className={index + 1 === questionDisplayId ? '' : ''}>
-            <p>{item.question}</p>
-            <RadioInput
-              className='radio-wrapper'
-              data={item.answers}
-              name={`question-${index}`}
-              onChange={({ target }) => onChangeValue(`question${index}`, target.value, index)}
-            />
-            {value?.[(`question${index}`)] && <p>"{value?.[(`question${index}`)]}" was selected</p>}
-          </div>
-        ))}
-      </form>
+    <div className="poll-container">
+      <Card className='form-wrapper'>
+        <form>
+          {questions.map((item, index) => (
+            <Slide direction="left" in={index + 1 === questionDisplayId} timeout={{ enter: 1000, exit: 1000 }}>
+              <div key={index} className={index + 1 === questionDisplayId ? '' : 'hidden'}>
+                <FormLabel>{item.question}</FormLabel>
+                <RadioInput
+                  className='radio-wrapper'
+                  data={item.answers}
+                  name={`question-${index}`}
+                  onChange={({ target }) => onChangeValue(`question${index}`, target.value, index)}
+                />
+                {value?.[(`question${index}`)] && <p>"{value?.[(`question${index}`)]}" was selected</p>}
+              </div>
+            </Slide>
+          ))}
+        </form>
+      </Card>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Radio, RadioGroup, FormControlLabel } from '@mui/material'
 
 import './RadioInput.css'
 
@@ -13,15 +14,20 @@ interface RadioInputProps {
 
 export const RadioInput: React.FC<RadioInputProps> = ({ name, data, onChange, className, radioClassName, labelClassName  }) => {
   return (
-    <div className={`${className ? `${className} ` : ''}radio-content-container`}>
+    <RadioGroup className="radio-content-container" onChange={onChange}>
       {data.map((item, index) => {
         return (
-          <div key={index} className="radio-content-wrapper">
-            <input type="radio" name={name} value={item.value} onChange={onChange} className={radioClassName} />
-            <label htmlFor={name} className={labelClassName} >{item.label}</label>
-          </div>
+          <FormControlLabel 
+            key={index} 
+            className="radio-content-wrapper" 
+            value={item.value} 
+            control={<Radio />} 
+            label={item.label}
+            name={name}
+            sx={{ marginLeft: 0, marginRight: 0 }}
+          />
         )
       })}
-    </div>
+    </RadioGroup>
   )
 }
