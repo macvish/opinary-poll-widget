@@ -21,7 +21,7 @@ This is a simple poll widget made with reactjs and embedded in a html test file.
 
 In the project directory, you can find the folder `final-work` where the minified js/css file is located and both html files.
 
-Below is the how to configure the queations:
+Below is how to configure the questions:
 
 ```
 const questions = [
